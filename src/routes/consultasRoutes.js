@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const consultasController = require('../controllers/consultasController');
 
+router.get('/buscar', consultasController.buscarConsulta)
 router.get('/', consultasController.mostrarConsultas)
 router.post('/', consultasController.criarConsulta)
 router.put('/:id', consultasController.atualizarConsulta);

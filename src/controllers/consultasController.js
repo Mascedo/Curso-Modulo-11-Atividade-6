@@ -48,4 +48,13 @@ exports.deletarConsulta = async (req, res) => {
     }catch(erro){
         res.status(500).json({erro: erro.message})
     }
+
+exports.buscarConsulta = async (req, res) => {
+    try{
+        const response = await consultasService.buscar(req.query)
+        res.status(200).json(response)
+    }catch(erro){
+        res.status(500).json({erro: erro.message})
+    }
+}
 }

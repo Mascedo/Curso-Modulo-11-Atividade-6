@@ -18,6 +18,16 @@ class consultasRepository {
         return await Consulta.findByIdAndDelete(id)
     }
     
+
+    async buscar(filtros){
+        const {data, medico} = filtros;
+        let query = {}
+
+        if (data) query.data = { $regex: data, $options: 'i' }
+        if (medico) query.medico = { $regex: medico, $options: 'i' }
+    
+        return await Consulta.find(query)
+    }
     }
 
 module.exports = new consultasRepository();

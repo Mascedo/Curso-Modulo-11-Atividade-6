@@ -34,6 +34,15 @@ class consultasService{
         return await consultasRepository.deletar(id)
     }
 
+    async buscar(query) {
+      
+        if((query.data||query.medico) === undefined){
+            throw new Error("Filtro invalido")
+        }
+
+        return await consultasRepository.buscar(query)
+      }
+
 }
 
 module.exports = new consultasService()
