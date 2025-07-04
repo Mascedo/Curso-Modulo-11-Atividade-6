@@ -19,14 +19,19 @@ class consultasRepository {
     }
     
 
-    async buscar(filtros){
-        const {data, medico} = filtros;
-        let query = {}
+    async buscar(filtros) {
+        const { data, medico } = filtros;
+        let query = {};
 
-        if (data) query.data = { $regex: data, $options: 'i' }
-        if (medico) query.medico = { $regex: medico, $options: 'i' }
-    
-        return await Consulta.find(query)
+        if (medico) {
+            query.medico = { $regex: medico, $options: 'i' }
+        }
+
+        if (data) {
+            query.data = { $regex: data, $options: 'i' }
+        }
+
+        return await Consulta.find(query);
     }
     }
 
