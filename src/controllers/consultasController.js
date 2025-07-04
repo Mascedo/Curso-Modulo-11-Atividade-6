@@ -48,6 +48,7 @@ exports.deletarConsulta = async (req, res) => {
     }catch(erro){
         res.status(500).json({erro: erro.message})
     }
+}
 
 exports.buscarConsulta = async (req, res) => {
     try{
@@ -56,5 +57,4 @@ exports.buscarConsulta = async (req, res) => {
     }catch(erro){
         res.status(500).json({erro: erro.message})
     }
-}
 }
