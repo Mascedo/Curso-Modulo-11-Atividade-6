@@ -35,6 +35,19 @@ class consultasService{
     }
 
     async buscar(query) {
+        const filtros = {};
+
+        if (typeof query.data === 'string' && query.data !== '') {
+            filtros.data = query.data
+        }
+
+        if (typeof query.medico === 'string' && query.medico() !== '') {
+            filtros.medico = query.medico
+        }
+
+        if (Object.keys(filtros).length === 0) {
+            return await consultasRepository.mostrar();
+        }
       
         if((query.data||query.medico) === undefined){
             throw new Error("Filtro invalido")
