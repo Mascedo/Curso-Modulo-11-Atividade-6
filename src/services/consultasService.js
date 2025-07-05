@@ -41,7 +41,7 @@ class consultasService{
             filtros.data = query.data
         }
 
-        if (typeof query.medico === 'string' && query.medico() !== '') {
+        if (typeof query.medico === 'string' && query.medico !== '') {
             filtros.medico = query.medico
         }
 
