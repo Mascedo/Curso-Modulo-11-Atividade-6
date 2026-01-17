@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const Funcionario = mongoose.model('Funcionario', {
+const Consulta = mongoose.model('Consulta', {
     medico: String,
     paciente: String,
     data: String,
     horario: String
 })
 
-module.exports = Funcionario
+module.exports = Consulta
