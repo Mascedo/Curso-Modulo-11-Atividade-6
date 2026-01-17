@@ -53,7 +53,7 @@ class consultasService{
             throw new Error("Filtro invalido")
         }
 
-        return await consultasRepository.buscar(query)
+        return await consultasRepository.buscar(filtros)
       }
 
 }
