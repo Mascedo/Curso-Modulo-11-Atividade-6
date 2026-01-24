@@ -26,7 +26,7 @@ class consultasService{
         "50","51","52","53","54","55","56","57","58","59"
         ]
 
-        if(!(horas.includes(horario.slice(0, 2))) || !(minutos.includes(horario.slice(3,5))) || (horario.slice(2, 3) !== ":") || (horario.length !== 5)){
+        if(!(horas.includes(horario.slice(0, 2))) || !(minutos.includes(horario.slice(3,5))) || (horario.slice(2, 3) !== ":") || (horario.length !== 5)){// verifica o horario se esta no formato correto usando dois array
             throw new Error("O horario deve estar no formato HH:MM!")
         }
 
